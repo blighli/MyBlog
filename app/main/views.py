@@ -1,4 +1,5 @@
 # coding=utf8
+import os
 from flask import render_template, url_for, redirect, request
 from . import  main
 from .. import db
@@ -13,3 +14,7 @@ def index():
 @main.route('/login')
 def login():
     return render_template("login.html")
+
+@main.route('/status')
+def status():
+    return os.getenv('FLASK_CONFIG')
