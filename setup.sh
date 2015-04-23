@@ -1,28 +1,21 @@
 #!/usr/bin/env bash
 
-upgrade(){
-    linpy/bin/pip install -r requirements.txt
-    if [ -e migrations ];then
-        linpy/bin/python manage.py db upgrade
-    fi
-}
-
 cd "$(dirname "$0")"
+
+git pull
 
 if [ ! -e linpy ];then
     virtualenv linpy
-    upgrade
 fi
 
-gitmsg="$(git pull)"
-
-if [ "$gitmsg" != "Already up-to-date." ];then
-    upgrade
+if [[ ! -e requirements.bak || requirements.txt -nt requirements.bak ]];then
+    cp requirements.txt requirements.bak
+    linpy/bin/pip install -r requirements.txt
 fi
 
-echo "$(date "+%Y-%m-%d %H:%M:%S")" >> history.log
-echo "$gitmsg" >> history.log
-
+if [ -e migrations ];then
+    linpy/bin/python manage.py db upgrade
+fi
 
 
 
