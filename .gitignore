@@ -6,3 +6,4 @@ bower_components/
 __pycache__/
 *.pyc
 *.sqlite
+*.log
