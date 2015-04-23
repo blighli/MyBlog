@@ -17,5 +17,5 @@ def login():
 
 @main.route('/test')
 def test():
-    config=os.getenv('FLASK_CONFIG')
+    config = os.getenv('FLASK_CONFIG')
     return render_template("test.html", config=config)
