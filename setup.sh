@@ -3,7 +3,7 @@
 upgrade(){
     linpy/bin/pip install -r requirements.txt
     if [ -e migrations ];then
-        linpy\bin\python manage.py db upgrade
+        linpy/bin/python manage.py db upgrade
     fi
 }
 
