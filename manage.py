@@ -16,6 +16,11 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 def setup():
+    from app.main.models import Post
+    p1 = Post()
+    p1.body = "Hello, World!"
+    db.session.add(p1)
+    db.session.commit()
     pass
 
 if __name__ == '__main__':
