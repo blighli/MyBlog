@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>我的博客</title>
-</head>
-<body>
-<h1>我的博客</h1>
-{% for post in posts %}
-    <div>{{ post.body }}</div>
-{% endfor %}
-</body>
-</html>
+{% extends "base/page.html" %}
+{% block main %}
+    {% for post in posts %}
+        <div>{{ post.body }}</div>
+    {% endfor %}
+{% endblock %}
