@@ -18,7 +18,7 @@ manager.add_command('db', MigrateCommand)
 def setup():
     from app.main.models import Post
     p1 = Post()
-    p1.body = "Hello to the World!"
+    p1.body = "Hello, welcome to the World!"
     db.session.add(p1)
     db.session.commit()
     pass
