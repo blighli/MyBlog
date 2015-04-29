@@ -1,10 +1,10 @@
 @echo off
-if not exist winpy (
-    virtualenv winpy
+if not exist venv (
+    virtualenv venv
 )
 
-winpy\Scripts\pip install -r requirements.txt
+venv\Scripts\pip install -r requirements.txt
 
 if exist migrations (
-    winpy\Scripts\python manage.py db upgrade
+    venv\Scripts\python manage.py db upgrade
 )

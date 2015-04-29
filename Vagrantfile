@@ -10,6 +10,6 @@ Vagrant.configure(2) do |config|
 		cd /vagrant
 		pip install -r requirements.txt
 		python manage.py db upgrade
-		python manage.py runserver -h 0.0.0.0 -p 5000
+		nohup python manage.py runserver -h 0.0.0.0 -p 5000 &
 	SHELL
 end
