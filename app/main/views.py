@@ -18,6 +18,7 @@ def login():
 @main.route('/config')
 def config():
     configs = {
-        "FLASK_CONFIG": os.getenv('FLASK_CONFIG')
+        "FLASK_CONFIG": os.getenv('FLASK_CONFIG'),
+        "DATABASE_URL": db.engine.url
     }
     return render_template("config.html", configs=configs)
