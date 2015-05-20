@@ -15,7 +15,9 @@ def index():
 def login():
     return render_template("login.html")
 
-@main.route('/test')
-def test():
-    config = os.getenv('FLASK_CONFIG')
-    return render_template("config.html", config=config)
+@main.route('/config')
+def config():
+    configs = {
+        "FLASK_CONFIG": os.getenv('FLASK_CONFIG')
+    }
+    return render_template("config.html", configs=configs)
