@@ -7,9 +7,6 @@ Vagrant.configure(2) do |config|
 	config.vm.provision "shell", inline: <<-SHELL
 		sudo apt-get update
 		sudo apt-get install -y python-pip
-		cd /vagrant
-		pip install -r requirements.txt
-		python manage.py db upgrade
-		nohup python manage.py runserver -h 0.0.0.0 -p 5000 &
+		. /vagrant/setup.sh
 	SHELL
 end

@@ -1,11 +1,20 @@
+# os related
 .DS_Store
-venv/
-node_modules/
-bower_components/
+
+# ide related
 .idea/
-.vagrant/
+
+#python environment
+venv/
 __pycache__/
 *.pyc
+
+# front end
+node_modules/
+bower_components/
+
+# others
+.vagrant/
 *.sqlite
 *.log
 *.bak
