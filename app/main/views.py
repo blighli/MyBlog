@@ -1,7 +1,7 @@
 # coding=utf8
 import os
 from flask import render_template, url_for, redirect, request
-from . import  main
+from . import main
 from .. import db
 from .models import Post
 
@@ -18,4 +18,4 @@ def login():
 @main.route('/test')
 def test():
     config = os.getenv('FLASK_CONFIG')
-    return render_template("test.html", config=config)
+    return render_template("config.html", config=config)
