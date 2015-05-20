@@ -9,15 +9,15 @@ manager = Manager(app)
 migrate = Migrate(app, db)
 
 
-def make_context():
+def make_shell_context():
     return dict(app=app, db=db)
 
-manager.add_command("shell", Shell(make_context=make_context))
+manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 
 
 @manager.command
-def setup():
+def seed():
     from app.main.models import Post
     p1 = Post()
     p1.body = "Hello, welcome to the World!"

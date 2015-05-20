@@ -2,6 +2,12 @@
 
 cd "$(dirname "$0")"
 
+if [ "$1" == "clean" ]; then
+    rm -rf venv
+    rm requirements.bak
+    rm *.sqlite
+fi
+
 git pull
 
 if [ ! -e venv ];then
