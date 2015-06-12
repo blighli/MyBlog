@@ -14,51 +14,41 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				{% call(head,body) core.panel() %}
-					{% if head %}
-						标题
-					{% endif %}
-					{% if body  %}
+
+				{{ core.panel("标题A","内容") }}
+
+				{% call core.panel("标题B") %}
+					{% call core.panelBody() %}
 						内容
-					{% endif %}
+					{% endcall %}
 				{% endcall %}
 
-				{% call(head,body) core.panel() %}
-					{% if head %}
-						标题
-					{% endif %}
-					{% if body  %}
+
+				{% call core.panel() %}
+					{% call core.panelHead() %}
+						标题C
+					{% endcall %}
+					{% call core.panelBody() %}
 						内容
-					{% endif %}
+					{% endcall %}
 				{% endcall %}
 
-				{% call(head,body) core.panel() %}
-					{% if head %}
-						标题
-					{% endif %}
-					{% if body  %}
-						内容
-					{% endif %}
-				{% endcall %}
 			</div>
 			<div class="col-md-4 col-off-8">
-				{% call(head,body) core.panel() %}
-					{% if head %}
-						标题
-					{% endif %}
-					{% if body  %}
+				
+				{% call core.panel("标题1") %}
+					{% call core.panelBody() %}
 						内容
-					{% endif %}
+					{% endcall %}
 				{% endcall %}
 
-				{% call(head,body) core.panel() %}
-					{% if head %}
-						标题
-					{% endif %}
-					{% if body  %}
+
+				{% call core.panel("标题2") %}
+					{% call core.panelBody() %}
 						内容
-					{% endif %}
+					{% endcall %}
 				{% endcall %}
+
 			</div>
 		</div>
 	</div>

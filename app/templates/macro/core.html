@@ -1,20 +1,53 @@
-{% macro css_file(filename) %}
+{% macro css(filename) %}
 <link href="{{ url_for('static',filename=filename) }}" rel="stylesheet">
 {% endmacro %}
 
-{% macro js_file(filename) %}
+{% macro js(filename) %}
 <script src="{{ url_for('static',filename=filename) }}"></script>
 {% endmacro %}
 
-{% macro panel() %}
+{% macro panel(head,body,foot) %}
 <div class="panel panel-default">
-	<div class="panel-heading">
-		{{ caller(head=True) }}
-	</div>
-	<div class="panel-body">
-		{{ caller(body=True) }}
-	</div>
+	{% if head %}
+		{{ panelHead(head) }}
+	{% endif %}
+	{% if body %}
+		{{ panelBody(body) }}
+	{% endif %}
+	{% if foot %}
+		{{ panelFoot(foot) }}
+	{% endif %}
+	{% if caller %}
+		{{ caller() }}
+	{% endif %}
 </div>
+{% endmacro %}
+
+{% macro panelHead(text) %}
+	<div class="panel-heading">
+		{{ text }}
+		{% if caller %}
+			{{ caller() }}
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro panelBody(text) %}
+	<div class="panel-body">
+	{{ text }}
+	{% if caller %}
+		{{ caller() }}
+	{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro panelFoot(text) %}
+	<div class="panel-footer">
+	{{ text }}
+	{% if caller %}
+		{{ caller() }}
+	{% endif %}
+	</div>
 {% endmacro %}
 
 {% macro navbar() %}
