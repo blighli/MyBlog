@@ -12,8 +12,15 @@
 	{% endcall %}
 
 	<div class="container">
+		<div></div>
 		<div class="row">
 			<div class="col-md-8">
+
+				<p class="main-title">
+					今天，你在开发时遇到了什么问题呢？
+					<a class="btn btn-primary" href="#">我要发帖</a>
+				</p>
+			
 
 				{{ core.panel("标题A","内容") }}
 
@@ -34,7 +41,7 @@
 				{% endcall %}
 
 			</div>
-			<div class="col-md-4 col-off-8">
+			<div class="col-md-4 col-md-off-8">
 				
 				{% call core.panel("标题1") %}
 					{% call core.panelBody() %}
