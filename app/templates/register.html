@@ -1,27 +1,22 @@
-{% set isLogin = True %}
+{% set isRegister = True %}
 {% extends "layout/front.html" %}
 {% block main %}
     <div class="container">
         <div class="panel-login">
             {% call core.panel() %}
                 {% call core.panelHead() %}
-                    登录
+                    用户注册
                 {% endcall %}
                 {% call core.panelBody() %}
                     <form action="index.html">
                         <input type="email" class="form-control" placeholder="邮件地址">
-                        <input type="password" class="form-control" placeholder="密码">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="remember-me"> 保存密码</label>
-                        </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+                        <input type="password" class="form-control" placeholder="设置密码">
+                        <input type="password" class="form-control" placeholder="确认密码">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
                     </form>
                     <div class="row">
                         <div class="col-sm-6 text-left">
-                            <a class="btn btn-link" href="#">← 忘记密码？</a>
-                        </div>
-                        <div class="col-sm-6 text-right">
-                            <a class="btn btn-link" href="register.html">注册 →</a>
+                            <a class="btn btn-link" href="login.html">← 登录</a>
                         </div>
                     </div>
                 {% endcall %}

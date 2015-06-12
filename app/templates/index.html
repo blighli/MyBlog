@@ -1,67 +1,80 @@
-{% extends "layout/base.html" %}
+{% set isIndex = True %}
+{% extends "layout/front.html" %}
 {% block main %}
-	{% call(title,nav) core.navbar() %}
-		{% if title %}
-			网站标题
-		{% endif %}
-		{% if nav  %}
-			<li class="active"><a href="#">首页</a></li>
-			<li><a href="#">博客</a></li>
-			<li><a href="#">关于</a></li>
-		{% endif %}
-	{% endcall %}
-
 	<div class="container">
 		<div></div>
 		<div class="row">
 			<div class="col-md-8">
 
 				<p class="main-title">
-					今天，你在开发时遇到了什么问题呢？
+					今天，你遇到了什么问题呢？
 					<a class="btn btn-primary" href="#">我要发帖</a>
 				</p>
-			
 
-				{{ core.panel("标题A","内容") }}
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#">技术</a></li>
+					<li><a href="#">游戏</a></li>
+					<li><a href="#">甚或</a></li>
+				</ul>
 
-				{% call core.panel("标题B") %}
-					{% call core.panelBody() %}
-						内容
-					{% endcall %}
-				{% endcall %}
-
+				<p></p>
 
 				{% call core.panel() %}
-					{% call core.panelHead() %}
-						标题C
-					{% endcall %}
-					{% call core.panelBody() %}
+                    {% call core.panelBody() %}
 						内容
-					{% endcall %}
-				{% endcall %}
+                    {% endcall %}
+                {% endcall %}
+
+                {% call core.panel() %}
+                    {% call core.panelBody() %}
+						内容
+                    {% endcall %}
+                {% endcall %}
+
+                {% call core.panel() %}
+                    {% call core.panelBody() %}
+						内容
+                    {% endcall %}
+                {% endcall %}
+
+                {% call core.panel() %}
+                    {% call core.panelBody() %}
+						内容
+                    {% endcall %}
+                {% endcall %}
+
+				<ul class="pagination">
+					<li class="disabled"><a href="#">«</a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">»</a></li>
+				</ul>
 
 			</div>
 			<div class="col-md-4 col-md-off-8">
-				
-				{% call core.panel("标题1") %}
-					{% call core.panelBody() %}
+
+                {% call core.panel("标题1") %}
+                    {% call core.panelBody() %}
 						内容
-					{% endcall %}
-				{% endcall %}
+                    {% endcall %}
+                {% endcall %}
 
 
-				{% call core.panel("标题2") %}
-					{% call core.panelBody() %}
+                {% call core.panel("标题2") %}
+                    {% call core.panelBody() %}
 						内容
-					{% endcall %}
-				{% endcall %}
+                    {% endcall %}
+                {% endcall %}
 
 			</div>
 		</div>
 	</div>
 
     {% for post in posts %}
-        <div>{{ post.body }}</div>
+		<div>{{ post.body }}</div>
     {% endfor %}
 
 {% endblock %}

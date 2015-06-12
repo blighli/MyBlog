@@ -6,14 +6,22 @@ from .. import db
 from .models import Post
 
 @main.route('/')
+@main.route('/index.html')
 def index():
     posts = Post.query.all()
     return render_template("index.html", posts=posts)
 
+@main.route('/about.html')
+def about():
+     return render_template("about.html")
 
-@main.route('/login')
+@main.route('/login.html')
 def login():
     return render_template("login.html")
+
+@main.route('/register.html')
+def register():
+    return render_template("register.html")
 
 @main.route('/config')
 def config():

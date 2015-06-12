@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+{% block body %}
+	{% call(title,nav,navRight) core.navbar() %}
+		{% if title %}
+            网站标题
+		{% endif %}
+		{% if nav  %}
+			<li class="{{ 'active' if isIndex }}"><a href="index.html">首页</a></li>
+			<li class="{{ 'active' if isAbout }}"><a href="about.html">关于</a></li>
+		{% endif %}
+		{% if navRight  %}
+			<li class="{{ 'active' if isLogin }}"><a href="login.html">登录</a></li>
+			<li class="{{ 'active' if isRegister }}"><a href="register.html">注册</a></li>
+		{% endif %}
+	{% endcall %}
+    {% block main %}
+    {% endblock %}
+{% endblock %}
