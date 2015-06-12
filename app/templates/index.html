@@ -1,7 +1,6 @@
-{% from "macro/core.html" import navbar %}
 {% extends "layout/base.html" %}
 {% block main %}
-	{% call(title,nav) navbar() %}
+	{% call(title,nav) core.navbar() %}
 		{% if title %}
 			网站标题
 		{% endif %}
@@ -11,6 +10,58 @@
 			<li><a href="#">关于</a></li>
 		{% endif %}
 	{% endcall %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				{% call(head,body) core.panel() %}
+					{% if head %}
+						标题
+					{% endif %}
+					{% if body  %}
+						内容
+					{% endif %}
+				{% endcall %}
+
+				{% call(head,body) core.panel() %}
+					{% if head %}
+						标题
+					{% endif %}
+					{% if body  %}
+						内容
+					{% endif %}
+				{% endcall %}
+
+				{% call(head,body) core.panel() %}
+					{% if head %}
+						标题
+					{% endif %}
+					{% if body  %}
+						内容
+					{% endif %}
+				{% endcall %}
+			</div>
+			<div class="col-md-4 col-off-8">
+				{% call(head,body) core.panel() %}
+					{% if head %}
+						标题
+					{% endif %}
+					{% if body  %}
+						内容
+					{% endif %}
+				{% endcall %}
+
+				{% call(head,body) core.panel() %}
+					{% if head %}
+						标题
+					{% endif %}
+					{% if body  %}
+						内容
+					{% endif %}
+				{% endcall %}
+			</div>
+		</div>
+	</div>
 
     {% for post in posts %}
         <div>{{ post.body }}</div>

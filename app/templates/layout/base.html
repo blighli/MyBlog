@@ -1,16 +1,17 @@
-{% from "macro/core.html" import css_file, js_file %}
+{% import "macro/core.html" as core%}
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    {{ css_file("lib/bootstrap/css/bootstrap.css") }}
-    <title>我的博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ core.css_file("lib/bootstrap/css/bootstrap.css") }}
+    <title>网站标题</title>
 </head>
 <body>
 {% block main %}
 {% endblock %}
-{{ js_file("lib/jquery/jquery-2.1.3.js") }}
-{{ js_file("lib/bootstrap/js/bootstrap.js") }}
+{{ core.js_file("lib/jquery/jquery-2.1.3.js") }}
+{{ core.js_file("lib/bootstrap/js/bootstrap.js") }}
 </body>
 </html>
