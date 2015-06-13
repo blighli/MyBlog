@@ -1,0 +1,28 @@
+.main-title {
+	margin: 30px 0 25px;
+	font-size: 18px;
+	vertical-align: middle;
+}
+
+.panel-login {
+	max-width: 330px;
+	padding-top: 80px;
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	.panel-login {
+		padding-top: 10px;
+	}
+}
+
+.panel-login .form-control {
+	height: auto;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+.panel-login .btn-block {
+	margin-bottom: 10px;
+}
