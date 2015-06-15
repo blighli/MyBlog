@@ -8,12 +8,16 @@
 
 				<p class="main-title">
 					今天，你遇到了什么问题呢？
-					<a class="btn btn-primary" href="#">我要发帖</a>
+					<a class="btn btn-primary" href="{{ url_for('main.post') }}">我要发帖</a>
 				</p>
 
 				{% call core.panel() %}
                     {% call core.panelBody() %}
-						内容
+						<h1>文章标题</h1>
+						<br>
+						<p>文章内容
+						文章内容</p>
+						<p>文章内容</p>
                     {% endcall %}
                 {% endcall %}
 

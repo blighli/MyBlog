@@ -11,6 +11,10 @@ def index():
     posts = Post.query.all()
     return render_template("index.html", posts=posts)
 
+@main.route('/post.html')
+def post():
+     return render_template("post.html")
+
 @main.route('/about.html')
 def about():
      return render_template("about.html")
