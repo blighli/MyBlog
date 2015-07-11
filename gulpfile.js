@@ -3,7 +3,7 @@ var gulp = require('gulp'),
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('app/**/*', function(){
-  	gulp.src('app/**/*').pipe(livereload());
+  gulp.watch('app/**/*', function(file){
+  	gulp.src(file.path).pipe(livereload());
   });
 });

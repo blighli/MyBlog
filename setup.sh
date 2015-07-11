@@ -12,6 +12,13 @@ if [ "$1" == "clean" ]; then
     rm -rf "$venv"
     rm requirements.bak
     rm *.sqlite
+    exit
+fi
+
+if [ "$1" == "run" ]; then
+    "$venv_bin"/python manage.py runserver &
+    gulp watch
+    exit
 fi
 
 git pull
@@ -28,9 +35,3 @@ fi
 if [ -e migrations ];then
     "$venv_bin"/python manage.py db upgrade
 fi
-
-if [ "$1" == "run" ]; then
-	"$venv_bin"/python manage.py runserver &
-    gulp watch
-fi
-
