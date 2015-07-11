@@ -29,5 +29,8 @@ if [ -e migrations ];then
     "$venv_bin"/python manage.py db upgrade
 fi
 
-
+if [ "$1" == "run" ]; then
+	"$venv_bin"/python manage.py runserver &
+    gulp watch
+fi
 
