@@ -3,7 +3,6 @@
 
 # ide related
 .idea/
-*.sublime-project
 *.sublime-workspace
 
 #python environment
