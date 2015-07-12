@@ -1,2 +1,2 @@
 # MyBlog
-good
+This is My Blog
